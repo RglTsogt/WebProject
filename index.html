@@ -4,27 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class = "h-screen w-screen ">
-    <div class = "h-15 w-60 bg-slate-700 flex justify-around">
-        <button class="group relative h-12 w-12 overflow-hidden rounded-2xl bg-slate-300 text-lg font-bold text-white">
-            ✖️
-            <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div>
-        </button>
-        <button class="group relative h-12 w-12 overflow-hidden rounded-2xl bg-slate-300 text-lg font-bold text-white">
-            ➗
-            <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div>
-        </button>
-        <button class="group relative h-12 w-12 overflow-hidden rounded-2xl bg-slate-300 text-lg font-bold text-white">
-            ➕
-            <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div>
-        </button>
-        <button class="group relative h-12 w-12 overflow-hidden rounded-2xl bg-slate-300 text-lg font-bold text-white">
-            ➖
-            <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300"></div>
-        </button>
+<body>
+    <div class="container">
+        <div class="headr">
+            <div class="move">
+                <div id="plusb" >+</div>
+                <div id="minusb" >-</div>
+                <div id="divideb" >÷</div>
+                <div id="multipleb">×</div>
+            </div>
+            <div class="nom">
+                <p>Үйлдлийн тоо</p>
+                <input type="number" id="numb" >
+            </div>
+            <div class="range">
+                <div class="Maxnum">
+                    <p>Хамгийн их тоо</p>
+                    <input id="max" type="number">
+                </div>
+                <div class="Minnum">
+                    <p>Хамгийн бага тоо</p>
+                    <input id="min" type="number">
+                </div>
+            </div>
+            <button style="outline: none;" >get problem</button>
+        </div>
+        <div class="content">
+            <div class="prob">
+                <p id="problem"></p>
+            </div>
+            <input id="answer" type="number">
+            <button id="check" >check</button>
+        </div>
     </div>
     <script src="./js.js"></script>
 </body>
