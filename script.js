@@ -41,7 +41,7 @@ document.getElementById("multipleb").addEventListener("click", function(){
         ismultiple = false;
     }
 })
-document.getElementById("getprob").addEventListener("click", function(){
+function getprob(){
     if(isplus == false && isminus == false && isdivide == false && ismultiple == false){
         alert("you must have atleast 1 chosen");
         return;
@@ -83,12 +83,15 @@ document.getElementById("getprob").addEventListener("click", function(){
     if(ismultiple){
         moves.push("×");
     }
-    ans = Math.floor((Math.random() * maxval) + 1);
+    let nextval = Math.floor((Math.random() * maxval) + 1);
+    ans = nextval;
     s += ans.toString();
     for(let i = 1; i <= numval; i++){
         let nextmove =  moves[Math.floor(Math.random() * moves.length)];
+        if(nextmove == "÷"){
+
+        }
         s += nextmove.toString();
-        let nextval;
         if(nextmove == "÷"){
             let possibledivideables = [];
             for(let j = 1; (j <= maxval && j <= maxval); j++){
@@ -117,7 +120,7 @@ document.getElementById("getprob").addEventListener("click", function(){
         }
     }
     document.getElementById("problem").innerHTML = s;
-})
+}
 
 document.getElementById("check").addEventListener("click", function(){
     if(issolvedcurrentprob == true){
@@ -128,9 +131,11 @@ document.getElementById("check").addEventListener("click", function(){
     if(givenans == ans){
         issolvedcurrentprob = true;
         justanumber = justanumber + 1;
+        getprob();
     }else{
         alert("your answer is wrong");
         justanumber = 0;
     }
     document.getElementById("streakcounter").innerHTML = justanumber;
+    
 })
