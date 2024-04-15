@@ -10,10 +10,10 @@
     <div class="container">
         <div class="headr">
             <div class="move">
-                <div id="plusb" >+</div>
-                <div id="minusb" >-</div>
-                <div id="divideb" >÷</div>
-                <div id="multipleb">×</div>
+                <button id="plusb">+</button>
+                <button id="minusb" >-</button>
+                <button id="divideb" >÷</button>
+                <button id="multipleb">×</button>
             </div>
             <div class="nom">
                 <p>Үйлдлийн тоо</p>
@@ -24,21 +24,21 @@
                     <p>Хамгийн их тоо</p>
                     <input id="max" type="number">
                 </div>
-                <div class="Minnum">
-                    <p>Хамгийн бага тоо</p>
-                    <input id="min" type="number">
-                </div>
             </div>
-            <button style="outline: none;" >get problem</button>
         </div>
         <div class="content">
             <div class="prob">
                 <p id="problem"></p>
             </div>
             <input id="answer" type="number">
-            <button id="check" >check</button>
+            <div class="lowerbuttons">
+                <button id="getprob">get problem</button>
+                <div id="streakcounter">0</div>
+                <button id="check" >check</button>
+            </div>
+            
         </div>
     </div>
-    <script src="./js.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
