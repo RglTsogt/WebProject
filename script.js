@@ -42,6 +42,11 @@ document.getElementById("multipleb").addEventListener("click", function(){
     }
 })
 function getprob(){
+    if(issolvedcurrentprob == false){
+        justanumber = 0;
+        document.getElementById("streakcounter").innerHTML = justanumber;
+    }
+
     if(isplus == false && isminus == false && isdivide == false && ismultiple == false){
         alert("you must have atleast 1 chosen");
         return;
@@ -88,9 +93,7 @@ function getprob(){
     s += ans.toString();
     for(let i = 1; i <= numval; i++){
         let nextmove =  moves[Math.floor(Math.random() * moves.length)];
-        if(nextmove == "÷"){
-
-        }
+        
         s += nextmove.toString();
         if(nextmove == "÷"){
             let possibledivideables = [];
@@ -106,6 +109,7 @@ function getprob(){
             nextval =  Math.floor((Math.random() * maxval) + 1);
             s += nextval.toString();   
         }
+
         if(nextmove == "÷"){
             ans = ans / nextval;
         }
@@ -131,6 +135,7 @@ document.getElementById("check").addEventListener("click", function(){
     if(givenans == ans){
         issolvedcurrentprob = true;
         justanumber = justanumber + 1;
+        document.getElementById("answer").value = "";
         getprob();
     }else{
         alert("your answer is wrong");
