@@ -81,7 +81,8 @@ function getprob(){
     }
     if(isminus){
         moves.push("-");
-    }
+    } 
+    
     if(isdivide){
         moves.push("÷");
     }
